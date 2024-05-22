@@ -6,7 +6,7 @@ import { CiUser } from "react-icons/ci";
 import "./SignUp.css"
 
 
-function SignUp() {
+function SignUp(props: any) {
     return (
             <Container className="signUpcontainerStyle">
                 <h2>Sign Up</h2>
@@ -39,7 +39,7 @@ function SignUp() {
                         />
                     </InputGroup>
                     <p />
-                    <Button className="buttonStyle">
+                    <Button className="buttonStyle" onClick={props.onLoginChange}>
                         Sign Up
                     </Button>
                 </Form>

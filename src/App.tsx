@@ -34,22 +34,33 @@ function App() {
   const [loginState, setLoginState] = useState(true);
   const [signInState, setSignInState] = useState(false);
   const [adminState, setAdminState] = useState(true);
+
+  const handleLoginChange = () => setLoginState(!loginState);
+  const handleSignInChange = () => setSignInState(!signInState);
+  const handleAdminChange = () => setAdminState(!adminState);
     
   return (
     <>
       <Header
         loginState={loginState}
         signInState={signInState}
+        onLoginChange={handleLoginChange}
+        onSignInChange={handleSignInChange}
+        onAdminChange={handleAdminChange}
       />
       {
         (signInState && !loginState)? (
-          <SignIn />
+          <SignIn 
+            onLoginChange={handleLoginChange}
+          />
         ) : (loginState && adminState)? (
           <Calendar />
         ) : loginState? (
           <FormUser />
         ) : (
-          <SignUp />
+          <SignUp 
+            onLoginChange={handleLoginChange}
+          />
         )
       }
       

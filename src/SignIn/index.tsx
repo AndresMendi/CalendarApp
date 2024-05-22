@@ -4,7 +4,7 @@ import { BsLock } from "react-icons/bs";
 import "./SignIn.css"
 
 
-function SignIn() {
+function SignIn(props: any) {
     return (
             <Container className="signIncontainerStyle">
                 <h2>Sign In</h2>
@@ -28,7 +28,7 @@ function SignIn() {
                         />
                     </InputGroup>
                     <p />
-                    <Button className="buttonStyle">
+                    <Button className="buttonStyle" onClick={props.onLoginChange}>
                         Sign in
                     </Button>
                 </Form>
